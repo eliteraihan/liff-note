@@ -123,4 +123,18 @@ function registerButtonHandlers() {
             liff.closeWindow();
         }
     });
+
+    // Mengecek apakah pengguna sudah masuk menggunakan akun LINE atau belum.
+    document.getElementById('liffLoginButton').addEventListener('click', function () {
+        if (!liff.isLoggedIn()) {
+            liff.login();
+        }
+    });
+    // Kalau sudah login sebelumnya, maka pengguna dapat logout akun LINE.
+    document.getElementById('liffLogoutButton').addEventListener('click', function () {
+        if (liff.isLoggedIn()) {
+            liff.logout();
+            window.location.reload();
+        }
+    });
 }
