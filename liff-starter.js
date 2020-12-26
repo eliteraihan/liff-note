@@ -100,3 +100,15 @@ function displayIsInClientInfo() {
         document.getElementById('isInClientMessage').textContent = 'You are opening the app in an external browser.';
     }
 }
+
+function registerButtonHandlers() {
+    /**
+     * Apabila kita klik tombol open window, maka method liff.openWindow() akan dijalankan.
+     */
+    document.getElementById('openWindowButton').addEventListener('click', function () {
+        liff.openWindow({
+            url: 'https://eliteraihan-liff-sampel-zero.herokuapp.com/', // Isi dengan Endpoint URL aplikasi web Anda
+            external: true  // false: inside LINE app
+        });
+    });
+}
