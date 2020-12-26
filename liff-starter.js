@@ -111,4 +111,16 @@ function registerButtonHandlers() {
             external: true  // false: inside LINE app
         });
     });
+
+    /**
+     * Apabila dijalankan di LINE maka aplikasi akan tertutup.
+     * Namun, apabila tidak dijalankan di LINE maka Alert Notification akan tampil.
+     */
+    document.getElementById('closeWindowButton').addEventListener('click', function () {
+        if (!liff.isInClient()) {
+            sendAlertIfNotInClient();
+        } else {
+            liff.closeWindow();
+        }
+    });
 }
