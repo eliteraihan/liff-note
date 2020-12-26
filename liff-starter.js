@@ -156,3 +156,25 @@ function registerButtonHandlers() {
         }
     });
 }
+
+/**
+ * Untuk menampilkan pesan di layar yang menandakan
+ * aplikasi LIFF tidak mendukung eksternal browser.
+ */
+function sendAlertIfNotInClient() {
+    alert('This button is unavailable as LIFF is currently being opened in an external browser.');
+}
+
+/**
+* Toggle specified element.
+* untuk beralih dari satu elemen ke elemen yang lainnya.
+* @param {string} elementId The ID of the selected element
+*/
+function toggleElement(elementId) {
+    const elem = document.getElementById(elementId);
+    if (elem.offsetWidth > 0 && elem.offsetHeight > 0) {
+        elem.style.display = 'none';
+    } else {
+        elem.style.display = 'block';
+    }
+}
