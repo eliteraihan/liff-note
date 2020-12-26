@@ -137,4 +137,22 @@ function registerButtonHandlers() {
             window.location.reload();
         }
     });
+
+    /**
+     * Kirim pesan saat klik button.
+     */
+    document.getElementById('sendMessageButton').addEventListener('click', function () {
+        if (!liff.isInClient()) {
+            sendAlertIfNotInClient();
+        } else {
+            liff.sendMessages([{
+                'type': 'text',
+                'text': "Anda telah menggunakan fitur Send Message!"
+            }]).then(function () {
+                window.alert('Ini adalah pesan dari fitur Send Message');
+            }).catch(function (error) {
+                window.alert('Error sending message: ' + error);
+            });
+        }
+    });
 }
