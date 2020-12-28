@@ -107,7 +107,7 @@ function registerButtonHandlers() {
      */
     document.getElementById('openWindowButton').addEventListener('click', function () {
         liff.openWindow({
-            url: 'https://eliteraihan-liff-sampel-zero.herokuapp.com/', // Isi dengan Endpoint URL aplikasi web Anda
+            url: 'https://eliteraihan-liff-note.herokuapp.com/', // Isi dengan Endpoint URL aplikasi web Anda
             external: true  // false: inside LINE app
         });
     });
